@@ -16,3 +16,5 @@ getButtonClick.addEventListener("click", () => {
   const getOutputElement = document.getElementById("btn__state");
   getOutputElement.innerHTML = counter;
 });
+
+console.log("test");
