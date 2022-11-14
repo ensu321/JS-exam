@@ -37,5 +37,4 @@ const getUsersNames = (users) => {
     return element.name;
   });
 };
-
 console.log(getUsersNames(users));
