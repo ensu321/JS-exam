@@ -5,3 +5,34 @@ subtraction(a, b) - priima du skaičius ir grąžina jų skirtumą.
 multiplication(a, b) - priima du skaičius ir grąžina jų daugybos rezultatą;
 division(a, b) - priima du skaičius ir grąžina jų dalybos rezultatą;
 ------------------------------------------------------------------------------------ */
+
+class Calculator {
+  constructor(a, b) {
+    this.a = a;
+    this.b = b;
+  }
+  sum() {
+    return this.a + this.b;
+  }
+  subtraction() {
+    return this.a - this.b;
+  }
+  multiplication() {
+    return this.a * this.b;
+  }
+  division() {
+    return this.a * this.b;
+  }
+}
+
+const newCalculatedSum = new Calculator(4, 6);
+console.log("suma: ", newCalculatedSum.sum());
+
+const newCalculatedSubstractionValue = new Calculator(4, 6);
+console.log("Skirtumas: ", newCalculatedSubstractionValue.subtraction());
+
+const newCalculatedMultiplicationValue = new Calculator(4, 6);
+console.log("Daugyba: ", newCalculatedMultiplicationValue.multiplication());
+
+const newCalculatedDivisionValue = new Calculator(4, 6);
+console.log("Dalyba: ", newCalculatedDivisionValue.division());
