@@ -11,4 +11,8 @@ const audi = {
   color: "white",
 };
 
-console.log(Object.keys(audi));
+const showObjectKeys = (objectValue) => {
+  return Object.keys(objectValue);
+};
+
+console.log(showObjectKeys(audi));
