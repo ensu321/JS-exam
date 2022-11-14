@@ -20,7 +20,7 @@ const users = [
   { id: "9", name: "Daniel Cane", age: 51 },
 ];
 
-//1 task
+//1 task done
 
 const findAverageAge = (arr) => {
   const { length } = arr;
