@@ -27,3 +27,38 @@
   margin-top: 50px;
   color: #333;
 }
+
+#output {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+}
+table {
+  
+  width: 30%;
+  border-collapse: collapse;
+  margin: 20px;
+}
+
+
+#modelsTable tr {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid black;
+  text-align: center;
+  padding: 5px;
+
+
+}
+td {
+  padding: 5px;
+  border:1px solid black;
+
+
+}
+
+caption {
+  font-weight: bold;
+  font-size: 30px;
+  padding-bottom: 20px;
+}
