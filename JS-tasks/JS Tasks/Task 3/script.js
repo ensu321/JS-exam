@@ -13,33 +13,49 @@ būti stilizuota su CSS ir būti responsive;
 
 const ENDPOINT = "https://api.github.com/users";
 
-fetch(ENDPOINT)
-  .then((response) => {
-    if (response.ok) {
-      return response.json();
-    } else {
-      throw new Error(response.statusText);
-    }
-  })
-  .then((data) => {
-    renderUsers(data);
-    console.log(data);
-  })
-  .catch((error) => {
-    console.error(error);
-  });
+const getButtonEvent = document.getElementById("btn");
+getButtonEvent.addEventListener("click", runFetch);
+
+function runFetch() {
+  fetch(ENDPOINT)
+    .then((response) => {
+      if (response.ok) {
+        return response.json();
+      } else {
+        throw new Error(response.statusText);
+      }
+    })
+    .then((data) => {
+      renderUsers(data);
+      console.log(data);
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+}
 
 function renderUsers(data) {
   const getOutPutContainer = document.getElementById("output");
   const getMessageDiv = document.getElementById("message");
   getMessageDiv.remove(); //removes message node
 
-  const createList = document.createElement("ul");
-  getOutPutContainer.append(createList); //create list
+  const createColumnAvatar = document.createElement("div");
+  createColumnAvatar.setAttribute("id", "avatarColumn");
+  getOutPutContainer.append(createColumnAvatar);
+
+  const createColumnLogin = document.createElement("div");
+  createColumnLogin.setAttribute("id", "loginColumn");
+  getOutPutContainer.append(createColumnLogin);
 
   data.forEach((element) => {
-    const createListItem = document.createElement("li");
-    createListItem.innerText = element.login;
-    createList.append(createListItem); //create list item for each element
+    const createAvatar = document.createElement("img");
+    createAvatar.src = element.avatar_url;
+    createAvatar.setAttribute("class", "avatar");
+    createColumnAvatar.append(createAvatar);
+
+    const createLogin = document.createElement("div");
+    createLogin.setAttribute("class", "login");
+    createLogin.innerText = element.login;
+    createColumnLogin.append(createLogin);
   });
 }
